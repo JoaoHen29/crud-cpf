@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar | CRUD CPF</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Pessoas - CRUD</h1>
+        <p>Express + JSON Server | Busca por CPF</p>
+    </header>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/get/" class="ativo">Listar (GET)</a>
+        <a href="/post/">Cadastrar (POST)</a>
+        <a href="/put/">Atualizar (PUT)</a>
+        <a href="/delete/">Excluir (DELETE)</a>
+    </nav>
+    <main>
+        <section class="cartao">
+            <h2><span class="metodo get">GET</span> Pessoas cadastradas</h2>
+            <p>Lista de todos os registros do db.json. Use o campo abaixo para buscar por CPF.</p>
+            <div class="busca">
+                <div class="campo">
+                    <label for="cpfBusca">Buscar por CPF</label>
+                    <input type="text" id="cpfBusca" placeholder="000.000.000-00">
+                </div>
+                <button type="button" onclick="buscarPorCpf()">Buscar</button>
+                <button type="button" class="btn-cinza" onclick="listarTodos()">Mostrar todos</button>
+            </div>
+            <div class="tabela-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>CPF</th><th>Nome</th><th>Sobrenome</th><th>E-mail</th><th>Idade</th>
+                            <th>Telefone</th><th>Rua</th><th>Bairro</th><th>Cidade</th><th>Estado</th><th>RG</th><th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-corpo"></tbody>
+                </table>
+            </div>
+            <div id="mensagem" class="mensagem"></div>
+        </section>
+    </main>
+    <footer>Programação para Internet - CRUD com JSON Server hospedado no Render</footer>
+    <script src="get.js"></script>
+</body>
+</html>

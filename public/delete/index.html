@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir | CRUD CPF</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Pessoas - CRUD</h1>
+        <p>Express + JSON Server | Busca por CPF</p>
+    </header>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/get/">Listar (GET)</a>
+        <a href="/post/">Cadastrar (POST)</a>
+        <a href="/put/">Atualizar (PUT)</a>
+        <a href="/delete/" class="ativo">Excluir (DELETE)</a>
+    </nav>
+    <main>
+        <section class="cartao">
+            <h2><span class="metodo delete">DELETE</span> Excluir pessoa</h2>
+            <p>Digite o CPF e clique em Buscar para conferir os dados antes de excluir.</p>
+            <div class="busca">
+                <div class="campo">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" placeholder="000.000.000-00">
+                </div>
+                <button type="button" onclick="buscarDados()">Buscar</button>
+            </div>
+            <div id="detalhes" class="detalhes">
+                <dl id="lista-detalhes"></dl>
+                <div class="acoes">
+                    <button type="button" class="btn-vermelho" onclick="deletarDados()">Confirmar exclusão</button>
+                    <button type="button" class="btn-cinza" onclick="cancelar()">Cancelar</button>
+                </div>
+            </div>
+            <div id="mensagem" class="mensagem"></div>
+        </section>
+    </main>
+    <footer>Programação para Internet - CRUD com JSON Server hospedado no Render</footer>
+    <script src="delete.js"></script>
+</body>
+</html>
